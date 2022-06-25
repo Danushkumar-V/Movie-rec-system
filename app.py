@@ -16,12 +16,12 @@ st.set_page_config(
 
 @st.cache( allow_output_mutation=True )
 def get_data():
-    movies = pickle.load(open('/home/danushkumar/Dk/dev/Movie-recommendation-system/movie_list.pkl','rb'))
-    path = ds.new_data("/home/danushkumar/Dk/dev/Movie-recommendation-system/Movie-rec-system/similarity.zip")
+    movies = pickle.load(open('movie_list.pkl','rb'))
+    path = ds.new_data("similarity.zip")
     f = open(path, 'rb')
     similarity = pickle.load(f)   
 
-    # similarity = pickle.load(open(ds.new_data('/home/danushkumar/Dk/dev/Movie-recommendation-system/Movie-rec-system/similarity.zip'),encoding="utf8"))
+    # similarity = pickle.load(open(ds.new_data('similarity.zip'),encoding="utf8"))
 
     return movies, similarity
 
